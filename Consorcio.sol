@@ -1,13 +1,12 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.7;
+pragma solidity ^0.8.0;
 
 import "./Employee.sol";
 import "./Tenant.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract Consorcio is Ownable {
+contract Consorcio {
 
-    address public consorcioAddress;
+    address owner;
 
     Tenant[] private tenantList;
     Employee[] private employeeList;
@@ -20,8 +19,11 @@ contract Consorcio is Ownable {
     receive() external payable { }
     fallback() external payable { }
 
-    constructor() payable { 
-        
+    constructor() payable {}
+
+    modifier onlyOwner{
+        require(msg.sender == owner);
+        _;
     } 
 
     modifier isEnoughbalance (uint _amount) {
