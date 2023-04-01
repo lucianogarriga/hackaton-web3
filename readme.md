@@ -13,11 +13,12 @@ Location: Cordoba, Argentina
 ###### Participants
 * Luciano Martin Garriga
 * Franco Cerino
-* Fede
+* Federico Rascon
 * Benjamin Juarez
 
 ###### Mentors
-* Juan Ignacio Neri Bocchi
+* Neri Bocchi (Ripio)
+* Juan Ignacio Bocchi
 
 ## ROADMAP
 
