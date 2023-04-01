@@ -142,8 +142,13 @@ contract TrustPay is Ownable {
     }
 
     /*
-    
-    */
+     * function withdraw()
+     * Function to withdraw the employee's salary from the contract to the employee's address. 
+     * The contract's available balance must be sufficient to cover the employee's salary.
+     * It can only be called by employees.
+     *
+     * Emits a {Withdrawn} event.
+     */
     function withdraw() public virtual onlyEmployee {
         uint256 salary = _employees[msg.sender];
         address contractAddress = address(this);
