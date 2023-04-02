@@ -8,12 +8,22 @@ import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contr
 /**
  * @title TrustPay
 
-    Use Case: The proposed development here is a payment system, that includes custody 
+    In a traditional linking relationship to make payments, there are three figures:
+
+    A: is the user who wishes to pay for any service.
+    B: is the traditional intermediary that charges a commission for the intermediation between two parties. 
+    C: is the end user of the destination of the money.
+
+    Use Case: 
+    
+    The proposed development here is a payment system, that includes custody 
     and distribution, aiming to simplify payments for the end users (A and C) and make
     the process more efficient. The dApp (decentralized Application) could do without 
     centralized intermediaries.
 
-    Goal: Reduce costs and speed up and secure financial transactions. 
+    Goals: 
+    
+    Reduce costs and speed up and secure financial transactions. 
     Operations become transparent and public, and every payment shows its traceability 
     with the origin and destiny of funds.
  */
@@ -156,5 +166,20 @@ contract TrustPay is Ownable {
         require(salaryToPay <= contractBalance, "Not enough funds");
         sendMoney(msg.sender, salaryToPay);
         emit Withdrawn(contractAddress, salaryToPay);
+    }
+
+    /* 
+    * function checkUser().
+    * Function to check what type of user is the address we pass in params.
+    * @param _userAddress The address we need to check on which type of user is.
+    */
+    function checkUser(address _userAddress) public view returns (string memory) {
+        if (_tenants[_userAddress] > 0) {
+            return "The user is a Tenant.";
+        } else if (_employees[_userAddress] > 0) {
+            return "The user is an Employee.";
+        } else {
+            return "The user is not a Tenant or Employee";
+        }
     }
 }
