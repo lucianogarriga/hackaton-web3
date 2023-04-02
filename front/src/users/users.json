@@ -1,0 +1,26 @@
+[
+    {
+        "_name": "Mr Jhon",
+        "_userAddress": "0xasdkajhfekawyekajshdkjaugwraugsdjkhgawr6543216547",
+        "_amount": 123456789,
+        "_role": "admin"
+    },
+    {
+        "_name": "Vitalik Gomez",
+        "_userAddress": "0xasdkajhfekawyekajshdkjaugwraug7591837459183279999",
+        "_amount": 4545454,
+        "_role": "admin"      
+    },
+    {
+        "_name": "Vitalik Gomez",
+        "_userAddress": "0x352C970EAa52e6699CB16f73B633a25565d218f3",
+        "_amount": 4545454,
+        "_role": "admin"
+    },
+    {
+        "_name": "Jhon B",
+        "_userAddress": "0xe8467d712Be67204A391085CD3b975Ba27343A31",
+        "_amount": 1000,
+        "_role": "admin"
+    }
+]
