@@ -122,6 +122,8 @@ The spirit of the brand is to convey a serious tone in which users can rely on a
 
 ### Steps To Use The dApp
 
+![ ](pics/draw.io--users.jpg "Users Diagram with On-Ramping and Off-Ramping")
+
 1. Admin (User D, here Contract Owner of an account on Trust Pay) adds other Users:
 
 * Tenant. (User A)
