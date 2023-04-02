@@ -84,10 +84,10 @@ contract TrustPay is Ownable {
      *
      * Emits a {TenantAdded} event.
      */ 
-    function addTenants(string memory _tenantName, address _tenantAddress, uint _expenses) public onlyOwner {
-        require(_tenants[_tenantAddress] == 0, "The tenant already exists or already has credits");
-        _tenants[_tenantAddress] = _expenses;
-        emit TenantAdded(_tenantName, _tenantAddress, _expenses);
+    function addTenants(string memory _name, address _userAddress, uint _amount) public onlyOwner {
+        require(_tenants[_userAddress] == 0, "The tenant already exists or already has credits");
+        _tenants[_userAddress] = _amount;
+        emit TenantAdded(_name, _userAddress, _amount);
     } 
     
     /*
@@ -100,10 +100,10 @@ contract TrustPay is Ownable {
      *
      * Emits a {EmployeeAdded} event.
      */ 
-    function addEmployees(string memory _employeeName, address _employeeAddress, uint _salary) public onlyOwner {
-        require(_employees[_employeeAddress] == 0, "The employee already exists or already has credits");
-        _employees[_employeeAddress] = _salary;
-        emit EmployeeAdded(_employeeName, _employeeAddress, _salary);
+    function addEmployees(string memory _name, address _userAddress, uint _amount) public onlyOwner {
+        require(_employees[_userAddress] == 0, "The employee already exists or already has credits");
+        _employees[_userAddress] = _amount;
+        emit EmployeeAdded(_name, _userAddress, _amount);
     } 
 
     /*
