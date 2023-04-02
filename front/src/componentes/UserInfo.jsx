@@ -14,6 +14,8 @@ const UserInfo = () => {
     functionName: "getBalance",
   });
 
+
+
   useEffect(() => {
     console.log(data);
   }, [data]);
@@ -25,7 +27,7 @@ const UserInfo = () => {
 
   return (
     <section className="conteiner-connected">
-      <p>User X</p>
+      <p>User X </p>
       <p>
         Connected to:{" "}
         <span className="userAddress">{shortenAddress(address)}</span>

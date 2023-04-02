@@ -1,12 +1,12 @@
 import { WagmiConfig, createClient, configureChains, mainnet } from "wagmi";
 import { publicProvider } from "wagmi/providers/public";
-import { polygon } from "@wagmi/chains";
+import { polygon, polygonMumbai } from "@wagmi/chains";
 import { InjectedConnector } from "wagmi/connectors/injected";
 
 import { PaginaHome } from "./paginas/PaginaHome";
 
 const { chains, provider, webSocketProvider } = configureChains(
-  [mainnet, polygon],
+  [mainnet, polygon, polygonMumbai],
   [publicProvider()]
 );
 
