@@ -11,7 +11,7 @@ const UserInfo = () => {
   const { data, isLoading, isError } = useContractRead({
     address: addressContract,
     abi: abi,
-    functionName: "getAddress",
+    functionName: "getBalance",
   });
 
   useEffect(() => {
