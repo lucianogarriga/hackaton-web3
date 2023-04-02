@@ -39,27 +39,56 @@ In the end, came the winner, only leaving behind a very original idea that seeme
 
 ### Concept Idea
 
-Painpoint detected: Services that have intermediaries always have an additional cost. So some payment systems entail a process in which, one party A pays to B, who then pays to C. 
+#### Painpoint detected
 
-Solution Approach: The workaround in web3 is that sometimes not all parties are required. So payer A can send assets directly to C without intermediary B. This allows for quicker processes and less expensive ones. 
+Services that have intermediaries always have an additional cost. So some payment systems entail a process in which, one party (User A) pays to another party (User B), who then pays to the end party (User C). In summary, in a traditional linking relationship to make payments, there are three figures:
 
-Contextual Solution: In the local context of this project, the development aims to comply with legal regulations, which may require that the intermediary party still exists. If the project includes this party, B, then the web3 solution we propose could still provide more transparency and traceability to the process.
+* A: is the user who wishes to pay for any service.
+* B: is the traditional intermediary that charges a commission for the intermediation between two parties. 
+* C: is the end user of the destination of the money.
 
-Use Case: The proposed development here is a payment system, that includes custody and distribution, aiming to simplify payments for the end users (A and C) and make the process more efficient. The dApp (decentralized Application) could do without centralized intermediaries.
+#### Solution Approach and Context: new User D
 
-Goal: Reduce costs and speed up and secure financial transactions. Operations become transparent and public, and every payment shows its traceability with the origin and destiny of funds.
+The workaround in web3 is that sometimes not all parties are required. So payer A can send assets directly to C without intermediary B. This allows for quicker processes and less expensive ones. 
+
+In the local context of this project, the development aims to comply with legal regulations, which may require that the intermediary party still exists. This project is a web3 solution where we provide more transparency and traceability to the process, showing in real time how funds move and the total balance of funds that go in and out of the smart contract. 
+
+A new user comes in place, which is User D, who is the Contract Owner. User D, in real life, is the person that creates and updates users to the system, can send payments to User C (even though User C can still claim salairies by their own.)
+
+#### Use Case Here
+
+The proposed development here is a payment system, that includes custody and distribution, aiming to simplify payments for the end users (A and C) and make the process more efficient. The dApp (decentralized Application) could do without centralized intermediaries. The Contract Owner, User D, can overview transactions and add and modify users.
+
+#### Goal
+
+Reduce costs and speed up and secure financial transactions. Operations become transparent and public, and every payment shows its traceability with the origin and destiny of funds.
 
 #### Other Use Cases
 
 The context and use case described above is only a fraction of what this analysis can tackle. The pain point is generic, and the use case for payments can be found in a wide array of situations.
 
-The dApp can be used in any field in which payers and receivers coexist: employees, partners, collaborators, etc. The dApp can be used in environments such as corporations, collaborations, and businesses.
+The dApp can be used in any field in which payers and receivers coexist: employees, partners, collaborators, etc. The dApp can be used in environments such as:
+
+* corporations
+* collaborations
+* businesses
+* transitional partnerships
+* crowdfunding
+* NGOs
 
 ### Project Scope: Administration System for Buildings and Owners
 
 A very common use case is the control of communal expenses that are handed into a fund and then used to pay expenses of the building, services, and employee salaries.
 
-The idea from the project kick-off is to give a web3 solution that can be useful to a massive audience. Between the 1st party A, and the end user C the ideal plan would be to have FIAT payments and FIAT cashouts. Everything that happens in the middle should be fueled on the blockchain with Smart Contracts which make the flow secure, traceable, and simple. 
+#### Massive Adoption Angle
+
+##### A dApp in the background: useful for FIAT users on the frontend
+
+The idea from the project kick-off is to give a web3 solution that can be useful to a massive audience. Between the 1st party A, and the end user C the ideal plan would be to have FIAT payments and FIAT cashouts. 
+
+##### A transparent process, under Scrow
+
+Everything that happens in the middle should be fueled on the blockchain with Smart Contracts which make the flow secure, traceable, and simple. 
 
 #### Users and UX
 
@@ -91,51 +120,45 @@ The spirit of the brand is to convey a serious tone in which users can rely on a
 
 * [Draw Diagram LINK in Google Public Folder](https://drive.google.com/file/d/1EvSddaOpwvGIHwQF9xLxwMdm0Nqso1Mr/view)
 
-### Solidity Project - Documentation
-31.00
+### Steps To Use The dApp
 
-1. `npm init –yess` 
-(initialize a project with package.json) There is no configuration set up. Later, there will be more dependencies to install
+1. Admin (User D, here Contract Owner of an account on Trust Pay) adds other Users:
 
-2. `npm install –save-dev hardhat` 
-(such as a dev dependency)
+* Tenant. (User A)
+	* Name
+	* Wallet Address
+	* Expenses Amount
+* Employee. (User C)
+	* Name
+	* Wallet Address
+	* Salary Amount
 
-The next step is to create a Javascript project. We create a .gitignore file and more basic dependencies with hardhat and ether.js. Then, we have a greeter.sol file. At the start of the file, we must uncomment the next line to use console.log
-`// import "hardhat/console.sol";`
+**On-Ramping**
 
-3. Go to alchemy.com and create an account. This website provides a dashboard to view the interactions of addresses and smart contracts. 
+2. Tenant (User A) pays
 
-We created a new app and we started with the Polygon Testnet (Mumbai). With that account, we have the following elements: API Key, HTTPS, and WebSockets to configure our account with the smart contract.
+* Tenant accesses the Ripio Portal
+* Tenant pays $ARS and converts them to MATIC
 
-4. You have to install a Metamask Wallet and add the Mumbai Polygon Test Network like a new Testnet in your Metamask Wallet.
+**Off-Ramping**
 
-5. Go to Mumbai faucet to obtain some MATICS into your wallet in the Mumbai network, to pay the gas for your transactions.
+3. Employee (User C) receives payment (Standard flow)
 
-6. Then, we are going to install one more tool called dotenv.  `npm install dotenv –save`. It creates an environment variable file. It's going to hold all of our secrets, including our Metamask private key, our alchemy API key, and any other things you don't want to add to your project.
+* Admin (User D) pays salary through third party Wallet
+	* Ripio
+	* Lemon
+	* Belo
 
-7. Create a file called .env
-Here we want to define our API URL and our Metamask private key.
+4. Employee (User C) receives payment (Alternative flow)
 
-We go to the Console terminal, and init an empty git repository, we tap a git add and we can see how the .gitignore file ignores the .env file to push into any github repository.
+* If Admin does nothing, employee (User C) claims salary. Claiming is available on two environments
+	* $ARS through Trust Pay Portal (Standard Recommended)
+	* MATIC through Metamask Browser Extension, or Mobile App
 
-8. We want to update the hardhat configuration file.
-We added a network object, with Mumbai, Polygon, for example, and inside every one of them, we added the URL and accounts with the private key. To obtain those variables, we require the .env file.
+5. Employee (User C) uses payment received
 
-```
-require("dotenv").config();
-```
-
-Add a line of code that loads the environment variables. 
-
-``` 
-const { API_URL, PRIVATE_KEY} = process.env;
-```
-
-9. Check the sample script file and config it.
-
-10. Run the command `npx hardhat compile`, before deploying to testnet.
-
-11. Run the command `npx hardhat run scripts/deploy.js` network Mumbai
+* Uses Debit Card for Payments
+* Electronic Deposit Transfer $ARS to Bank Account
 
 ### Done
 
