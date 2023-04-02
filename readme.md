@@ -122,8 +122,6 @@ The spirit of the brand is to convey a serious tone in which users can rely on a
 
 ### Steps To Use The dApp
 
-![ ](pics/draw.io--users.jpg "Users Diagram with On-Ramping and Off-Ramping")
-
 1. Admin (User D, here Contract Owner of an account on Trust Pay) adds other Users:
 
 * Tenant. (User A)
@@ -136,6 +134,8 @@ The spirit of the brand is to convey a serious tone in which users can rely on a
 	* Salary Amount
 
 **On-Ramping**
+
+![ ](pics/draw.io--users.jpg "Users Diagram with On-Ramping and Off-Ramping")
 
 2. Tenant (User A) pays
 
@@ -162,6 +162,15 @@ The spirit of the brand is to convey a serious tone in which users can rely on a
 * Uses Debit Card for Payments
 * Electronic Deposit Transfer $ARS to Bank Account
 
+### List of used technologies
+
+* FrontEnd: React / WAGMI Web3 Library
+* EVM Compatible Language: Solidity
+* OnRamp/OffRamp: Ripio Portal
+* Control Version System: GitHub
+* Blockchain: Ethereum
+* Blockchain Network: Polygon
+
 ### Done
 
 * Idea Concept
@@ -170,14 +179,13 @@ The spirit of the brand is to convey a serious tone in which users can rely on a
 	* Logo 
 	* Color Palette
 * Readme Documentation version 2
+* SmartContract: Smart contract deployed en Testent Polygon
+* Research Frontend: libraries, examples, etc. Build the Dapp and connect Wallet
 
 ### Upcoming Next 
 
-* SmartContract: Smart contract deployed en Testent Polygon
-* Research Frontend: libraries, examples, etc. Build the Dapp and connect Wallet
 * Business Rules: Review case scenarios in which the tenants, and representative/leader of the community, may need to consider special situations such as extraordinary expenses.
 * Installation and Deploy Guide
-* List of used technologies, with links
 * Bug acknowledgment and possible error corrections
 * Frequently Asked Questions (FAQ)
 * Copyrights, licenses, and legal considerations
