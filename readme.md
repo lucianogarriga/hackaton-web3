@@ -1,4 +1,4 @@
-![ ](logo.jpg "Trust Pay Logo")
+![ ](pics/logo.jpg "Trust Pay Logo")
 
 # TRUST PAY
 
@@ -19,6 +19,21 @@ Location: Cordoba, Argentina
 ###### Mentors
 * Neri Bocchi (Ripio)
 * Juan Ignacio Bocchi
+
+#### Kick-Off, Brainstorming, and Prioritization
+
+The Hackaton begins with a time limit of developing an idea in a little less than 3 consecutive days, and sets the agenda that teams can develop whatever they want as long as the concept is useful and makes good use of the properties that a web3 environment can provide. Additional criteria is that the development is expected to be original, complete and delivered with clean code and complete functionality.
+
+The group that is proposing the current project firstly brainstormed ideas and came to four main contesting ideas to counter weight each against the other. To evaluate each of the possible ideas to develop, the group members built an evaluation system that would comply with the hackaton context.
+
+The first two criteria to test ideas were originality(1), and viability(2). So for each of the four ideas, the group assigned a value for these 2 categories in a score from 1 to 10. The competing ideas at the top had similar scores. So in a second instance, the group adopted a third criteria: willingness(3) to develop.
+
+In the end, came the winner, only leaving behind a very original idea that seemed complex to develop in the assigned time, and with a potential promise to develop in the future. The scores for the winner idea, from the point of view of the group was:
+
+1. Originality: 8
+2. Viability: 10
+3. Willingness: 10
+4. Total Score: 28
 
 ## ROADMAP
 
@@ -68,13 +83,59 @@ The spirit of the brand is to convey a serious tone in which users can rely on a
 
 * Color Palette from [coolors.co: LINK  here](https://coolors.co/palette/03045e-023e8a-0077b6-0096c7-00b4d8-48cae4-90e0ef-ade8f4-caf0f8)
 
-![ ](color-palette.png "Hex Colors in Blue Tones")
+![ ](pics/color-palette.png "Hex Colors in Blue Tones")
 
 ### System Architecture Diagram
 
-![ ](architecture.png "System Architecture Diagram with dApp Wallet and Smart Contract")
+![ ](pics/architecture.png "System Architecture Diagram with dApp Wallet and Smart Contract")
 
 * [Draw Diagram LINK in Google Public Folder](https://drive.google.com/file/d/1EvSddaOpwvGIHwQF9xLxwMdm0Nqso1Mr/view)
+
+### Solidity Project - Documentation
+31.00
+
+1. `npm init –yess` 
+(initialize a project with package.json) There is no configuration set up. Later, there will be more dependencies to install
+
+2. `npm install –save-dev hardhat` 
+(such as a dev dependency)
+
+The next step is to create a Javascript project. We create a .gitignore file and more basic dependencies with hardhat and ether.js. Then, we have a greeter.sol file. At the start of the file, we must uncomment the next line to use console.log
+`// import "hardhat/console.sol";`
+
+3. Go to alchemy.com and create an account. This website provides a dashboard to view the interactions of addresses and smart contracts. 
+
+We created a new app and we started with the Polygon Testnet (Mumbai). With that account, we have the following elements: API Key, HTTPS, and WebSockets to configure our account with the smart contract.
+
+4. You have to install a Metamask Wallet and add the Mumbai Polygon Test Network like a new Testnet in your Metamask Wallet.
+
+5. Go to Mumbai faucet to obtain some MATICS into your wallet in the Mumbai network, to pay the gas for your transactions.
+
+6. Then, we are going to install one more tool called dotenv.  `npm install dotenv –save`. It creates an environment variable file. It's going to hold all of our secrets, including our Metamask private key, our alchemy API key, and any other things you don't want to add to your project.
+
+7. Create a file called .env
+Here we want to define our API URL and our Metamask private key.
+
+We go to the Console terminal, and init an empty git repository, we tap a git add and we can see how the .gitignore file ignores the .env file to push into any github repository.
+
+8. We want to update the hardhat configuration file.
+We added a network object, with Mumbai, Polygon, for example, and inside every one of them, we added the URL and accounts with the private key. To obtain those variables, we require the .env file.
+
+```
+require("dotenv").config();
+```
+
+Add a line of code that loads the environment variables. 
+
+``` 
+const { API_URL, PRIVATE_KEY} = process.env;
+```
+
+9. Check the sample script file and config it.
+
+10. Run the command `npx hardhat compile`, before deploying to testnet.
+
+11. Run the command `npx hardhat run scripts/deploy.js` network Mumbai
 
 ### Done
 
@@ -83,7 +144,7 @@ The spirit of the brand is to convey a serious tone in which users can rely on a
 	* Product Naming
 	* Logo 
 	* Color Palette
-* Readme Documentation version 1
+* Readme Documentation version 2
 
 ### Upcoming Next 
 
@@ -98,4 +159,5 @@ The spirit of the brand is to convey a serious tone in which users can rely on a
 
 ### Additional Resources
 
+* [Canva Presentation of the Project](https://www.canva.com/design/DAFe3QbNqq0/WziLfB7dX9QqUmERkc7V7w/edit?utm_content=DAFe3QbNqq0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 * [LINK on How to Document a Software Project](https://cs.uns.edu.ar/~ldm/mypage/data/oc/info/guia_para_la_documentacion_de_proyectos_de_software.pdf)
