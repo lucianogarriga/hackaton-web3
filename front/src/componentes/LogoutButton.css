@@ -1,0 +1,39 @@
+.logoutSection {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.logoutSection button {
+   
+    background-color: rgb(104, 104, 104);
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+
+.conteiner-connected {
+    font-size: 16px;
+    color: rgb(66, 66, 66);
+    padding-left: 50px;
+    padding-right: 70px;
+}
+
+.container-button {
+    display: flex;
+    justify-content: center
+}
+
+.conected-to {
+    /* font-family: ; */
+    color: rgb(66, 66, 66);
+    display: flex;
+    justify-content: center;
+}
+
+.address {
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+}

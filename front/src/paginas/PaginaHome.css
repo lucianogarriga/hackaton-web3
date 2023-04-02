@@ -1,0 +1,23 @@
+
+
+body {
+    background-color: rgb(63, 62, 62);
+}
+
+section {
+    background-color: #caf0f8;
+}
+
+.bodyBorder {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    width: 70vw;
+    max-width: 700px;
+    min-width: 300px;
+    background-color: #caf0f8;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding-top: 30px;
+    padding-bottom: 100px;
+}
