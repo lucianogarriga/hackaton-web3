@@ -25,11 +25,11 @@ contract TrustPay is Ownable {
     /*
     Events to call in many functions, to improve user experience
     */
-    event Deposited(uint256 weiAmount);
+    event Deposited(uint256 amount);
     event Withdrawn(address indexed payee, uint256 salary);
 
-    event TenantAdded(string tenantName, address tenantAddress, uint256 expenses);
-    event EmployeeAdded(string employeeName, address employee, uint256 salary);
+    event TenantAdded(string name, address userAddress, uint256 amount);
+    event EmployeeAdded(string name, address userAddress, uint256 amount);
 
     mapping(address => uint256) private _tenants;
     mapping(address => uint256) private _employees;
@@ -84,10 +84,10 @@ contract TrustPay is Ownable {
      *
      * Emits a {TenantAdded} event.
      */ 
-    function addTenants(string memory _tenantName, address _tenantAddress, uint _weiAmount) public onlyOwner {
+    function addTenants(string memory _tenantName, address _tenantAddress, uint _expenses) public onlyOwner {
         require(_tenants[_tenantAddress] == 0, "The tenant already exists or already has credits");
-        _tenants[_tenantAddress] = _weiAmount;
-        emit TenantAdded(_tenantName, _tenantAddress, _weiAmount);
+        _tenants[_tenantAddress] = _expenses;
+        emit TenantAdded(_tenantName, _tenantAddress, _expenses);
     } 
     
     /*
@@ -100,10 +100,10 @@ contract TrustPay is Ownable {
      *
      * Emits a {EmployeeAdded} event.
      */ 
-    function addEmployees(string memory _employeeName, address _employeeAddress, uint _weiAmount) public onlyOwner {
+    function addEmployees(string memory _employeeName, address _employeeAddress, uint _salary) public onlyOwner {
         require(_employees[_employeeAddress] == 0, "The employee already exists or already has credits");
-        _employees[_employeeAddress] = _weiAmount;
-        emit EmployeeAdded(_employeeName, _employeeAddress, _weiAmount);
+        _employees[_employeeAddress] = _salary;
+        emit EmployeeAdded(_employeeName, _employeeAddress, _salary);
     } 
 
     /*
@@ -150,11 +150,11 @@ contract TrustPay is Ownable {
      * Emits a {Withdrawn} event.
      */
     function withdraw() public virtual onlyEmployee {
-        uint256 salary = _employees[msg.sender];
+        uint256 salaryToPay = _employees[msg.sender];
         address contractAddress = address(this);
         uint256 contractBalance = contractAddress.balance;
-        require(salary <= contractBalance, "Not enough funds");
-        sendMoney(msg.sender, salary);
-        emit Withdrawn(contractAddress, salary);
+        require(salaryToPay <= contractBalance, "Not enough funds");
+        sendMoney(msg.sender, salaryToPay);
+        emit Withdrawn(contractAddress, salaryToPay);
     }
 }
