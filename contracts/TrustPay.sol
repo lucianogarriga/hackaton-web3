@@ -146,7 +146,7 @@ contract TrustPay is Ownable {
     * @param to The address of the transfer recipient.
     * @param value The amount of cryptocurrency to transfer.
     */
-    function sendMoney(address to, uint value) public {
+    function sendMoney(address to, uint value) private {
         address payable receiver = payable(to);
         receiver.transfer(value);
     }
