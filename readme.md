@@ -190,12 +190,12 @@ The spirit of the brand is to convey a serious tone in which users can rely on a
 * Frequently Asked Questions (FAQ)
 * Copyrights, licenses, and legal considerations
 
-### Further Ideas for development
+### Further Ideas for Development
 
-One of us, Benji, got in conversation with one of the Founding Members of the Cardano RealFi Consortium [@RealfiCardano](https://twitter.com/RealFiCardano). Darius Golkar suggested 2 ideas, that we could:
+We had a conversation with one of the Founding Members of the Cardano RealFi Consortium [@RealfiCardano](https://twitter.com/RealFiCardano). Darius Golkar suggested 2 ideas, that we could:
 
 1. Make use of a built tool that serves to receive payments and allows integration with several platforms such as Venmo, Paypal and Stripe: [https://github.com/NFT-DAO/EZ-Pay---Backend](https://github.com/NFT-DAO/EZ-Pay---Backend)
-2. Present our pitch deck for Catalyst Funding.
+2. Present our pitch deck for Catalyst Funding: [Catalyst Fund 10](https://projectcatalyst.io/funds). (Proposals are not open yet.)
 
 ### Additional Resources
 
